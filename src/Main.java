@@ -1,17 +1,48 @@
-// Press ⇧ twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+import com.sun.security.jgss.GSSUtil;
+
 public class Main {
     public static void main(String[] args) {
-        // Press ⌥⏎ with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        task1();
+    }
 
-        // Press ⌃R or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+    public static void task1() {
+        System.out.println("Задача 1");
+        int[] weights = {90, 91, 93, 92, 85, 87, 88, 89, 0, 0, 0, 0};
+        int[] weightsCopy = {91, 91, 93, 92, 85, 87, 88, 89, 0, 0, 0, 0};
+        for (int i = 0; i < weightsCopy.length; i++) {
+            System.out.println(weightsCopy[i]);
+            boolean arraysAreEqual = true;
+            arraysAreEqual = weights.length == weightsCopy.length;
+            if (arraysAreEqual) {
+                for (; i < weights.length; i++) {
+                    if (weights[i] != weightsCopy[i]) {
+                        arraysAreEqual = false;
+                    }
+                }
+            }
+            if (arraysAreEqual) {
+                System.out.println("Массивы одинаковы");
+            } else {
+                System.out.println("Массивы разные");
+            }
+        }
+        int maxWeight = -1;
+        for (int current : weights) {
+            if (current > maxWeight) {
+                maxWeight = current;
+            }
+        }
+            System.out.println(maxWeight);
+        for (int i = 0; i < weights.length - 1 && weights[i +1] != 0; i++) {
+            System.out.println(weights[i + 1] - weights[i]);
 
-            // Press ⌃D to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing ⌘F8.
-            System.out.println("i = " + i);
+        }
+
         }
     }
-}
+
+
+
+
+
+
