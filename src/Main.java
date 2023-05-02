@@ -60,6 +60,7 @@ public class Main {
         char[] arr = { 'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
         for (int i = arr.length - 1; i >=0; i--) {
             System.out.print(arr[i] + " ");
+
         }
     }
 }
