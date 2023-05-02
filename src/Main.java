@@ -1,17 +1,67 @@
-// Press ⇧ twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
-        // Press ⌥⏎ with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        task1();
+        task2();
+        task3();
+        task4();
+    }
 
-        // Press ⌃R or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+    public static int[] generateRandomArray() {
+        java.util.Random random = new java.util.Random();
+        int[] arr = new int[30];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = random.nextInt(100_000) + 100_000;
+        }
+        return arr;
+    }
 
-            // Press ⌃D to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing ⌘F8.
-            System.out.println("i = " + i);
+    public static void task1() {
+        System.out.println("Задача 1");
+        int[] arr = generateRandomArray();
+        int sum = 0;
+        for (int i : arr) {
+            sum += i;
+        }
+        System.out.println("Сумма трат за месяц составила " + sum + " рублей");
+
+    }
+
+    public static void task2() {
+        System.out.println("Задача 2");
+        int[] arr = generateRandomArray();
+        int min = arr[0];
+        int max = arr[0];
+        for (int i : arr) {
+            if (i < min)
+                min = i;
+            if (i > max)
+                max = i;
+
+        }
+        System.out.println("Минимальная сумма трат за день составила " + min + " рублей");
+        System.out.println("Мвксиальная сумма трат за день составила " + max + " рублей");
+
+    }
+
+    public static void task3() {
+        System.out.println("Задача 3");
+        int[] arr = generateRandomArray();
+        double sum = 0;
+        for (int i : arr) {
+            sum += i;
+        }
+        double sumMiddle = sum / arr.length;
+        System.out.println("Средняя сумма трат за месяц составила " + sumMiddle + " рублей");
+    }
+
+    public static void task4() {
+        System.out.println("Задача 4");
+        char[] arr = { 'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
+        for (int i = arr.length - 1; i >=0; i--) {
+            System.out.print(arr[i] + " ");
         }
     }
 }
+
+
